@@ -71,12 +71,12 @@ def one_hot_encoder(cls_name):
     return labels
 
 
-
 if __name__ == '__main__':
-    data_path = r'C:\Users\13632\Documents\Python_Scripts\Transformer\orignal_Transformer\aclImdb'
-    class_name = ['neg', 'pos', 'unsup']
-    pretrained_word2vect = r'C:\Users\13632\Documents\Python_Scripts\Transformer\orignal_Transformer\bert-base-uncased'
+    data_path = r'/content/drive/Mydrive/Colab Notebooks/bert-sentiment-analysis/aclImdb'
+    class_name = ['neg', 'pos']
+    pretrained_word2vect = r'/content/bert-base-uncased'
 
     data = MyDatasets(data_path, class_name, pretrained_word2vect)
     print(data.__getitem__(1)['input_ids'].size())
-    print(data.__getitem__(2)['input_ids'].size())
+    print(data.__getitem__(1)['label'])
+
