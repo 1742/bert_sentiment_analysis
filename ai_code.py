@@ -55,7 +55,7 @@ for epoch in range(epochs):
             loss = outputs.loss
             logits = outputs.logits
 
-            pbar.set_postfix('loss: {}'.format(loss.item))
+            pbar.set_postfix({'CELoss:': loss.item()})
 
             train_loss += loss.item()
 
