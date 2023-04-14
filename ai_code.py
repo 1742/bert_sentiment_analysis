@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 from tqdm import tqdm
 
 data_path = r'C:\Users\13632\Documents\Python_Scripts\Transformer\orignal_Transformer\aclImdb'
-class_name = ['neg', 'pos', 'unsup']
+class_name = ['neg', 'pos']
 pretrained_word2vect = r'C:\Users\13632\Documents\Python_Scripts\Transformer\orignal_Transformer\bert-base-uncased'
 pretrained_model = r'C:\Users\13632\Documents\Python_Scripts\Transformer\orignal_Transformer\bert-base-uncased'
 epochs = 10
