@@ -72,7 +72,7 @@ def one_hot_encoder(cls_name):
 
 
 if __name__ == '__main__':
-    data_path = r'/content/drive/Mydrive/Colab Notebooks/bert-sentiment-analysis/aclImdb'
+    data_path = r'/content/drive/MyDrive/Colab Notebooks/bert-sentiment-analysis/aclImdb'
     class_name = ['neg', 'pos']
     pretrained_word2vect = r'/content/bert-base-uncased'
 
