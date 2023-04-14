@@ -29,7 +29,7 @@ class MyDatasets(Dataset):
 
     def __getitem__(self, index):
         with open(self.data[index], encoding='utf-8') as f:
-            label = self.data[index].split("\\")[-2]
+            label = self.data[index].split("/")[-2]
             label = self.labels[label]
             lines = f.read()
             token = self.tokenizer.encode_plus(lines,
