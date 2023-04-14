@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 from tqdm import tqdm
 
 data_path = r'/content/drive/MyDrive/Colab Notebooks/bert_sentiment_analysis/aclImdb'
-class_name = ['neg', 'pos', 'unsup']
+class_name = ['neg', 'pos']
 pretrained_word2vect = '/content/bert-base-uncased'
 pretrained_model = '/content/bert-base-uncased'
 save_apth = '/content/drive/MyDrive/Colab Notebooks/bert_sentiment_analysis'
