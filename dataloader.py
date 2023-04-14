@@ -29,8 +29,8 @@ class MyDatasets(Dataset):
 
     def __getitem__(self, index):
         with open(self.data[index], encoding='utf-8') as f:
-            label = self.data[index].split("/")[-2]
-            label = torch.Tensor(self.labels[label])
+            label = self.data[index].split("\\")[-2]
+            label = self.labels[label]
             lines = f.read()
             token = self.tokenizer.encode_plus(lines,
                                             add_special_tokens=True,        # 添加CLS和SEQ
@@ -56,15 +56,20 @@ class MyDatasets(Dataset):
 
 def one_hot_encoder(cls_name):
     labels = {}
-    for i, cls in enumerate(cls_name):
-        label = []
-        for j in range(len(cls_name)):
-            if j == i:
-                label.append(1)
-            else:
-                label.append(0)
-        labels[cls] = label
+    if len(cls_name) > 2:
+        for i, cls in enumerate(cls_name):
+            label = []
+            for j in range(len(cls_name)):
+                if j == i:
+                    label.append(1)
+                else:
+                    label.append(0)
+            labels[cls] = torch.Tensor(label)
+    else:
+        for i, cls in enumerate(cls_name):
+            labels[cls] = i
     return labels
+
 
 
 if __name__ == '__main__':
